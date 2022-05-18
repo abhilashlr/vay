@@ -12,8 +12,8 @@ export const PusherProvider = ({
 }: {
   children: ReactNode;
 }): ReactElement => {
-  const pusher = new Pusher('02b8635829d09f169dd4', {
-    cluster: 'ap2'
+  const pusher = new Pusher('b21791b6356e9b0999ab', {
+    cluster: 'mt1'
   });
 
   return (
