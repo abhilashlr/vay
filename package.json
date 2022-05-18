@@ -1,0 +1,20 @@
+{
+  "name": "vay",
+  "version": "1.0.0",
+  "description": "Vay monorepo app containing simulator, backend and web app for map",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "server": "yarn workspace backend start",
+    "map": "yarn workspace map start",
+    "simulator": "yarn workspace simulator start",
+    "start": "concurrently --kill-others-on-fail \"yarn server\"  \"yarn simulator\" \"yarn map\""
+  },
+  "author": "Abhilash L R",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.2.0"
+  }
+}
