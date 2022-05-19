@@ -29,8 +29,8 @@ export const MapPage: FC = () => {
   channel.bind('ADD', function({locations}: { locations: MarkerExpression[] }) {
     setPositions(uniqBy([...positions, ...locations], 'vin'));
   });
-  channel.bind('REMOVE', function({ location }: { location: MarkerExpression }) {
-    setPositions(positions.filter((position) => position.vin !== location.vin));
+  channel.bind('REMOVE', function({ vin }: MarkerExpression) {
+    setPositions(positions.filter((position) => position.vin !== vin));
   });
 
   return (

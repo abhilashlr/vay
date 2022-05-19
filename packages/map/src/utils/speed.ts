@@ -3,7 +3,7 @@ import { distanceBetweenLatlng } from "./distance";
 
 export const speed = memoize((...args: [number, number, number, number]) => {
   const distanceInMeters = distanceBetweenLatlng(...args);
-  const time = 10; // Randomising this to keep speed in limits
+  const time = 10 * 5; // Randomising this to keep speed in limits
 
   const speedInKmph = (distanceInMeters / time) * (18 / 5);
 

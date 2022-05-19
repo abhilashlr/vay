@@ -25,9 +25,9 @@ module.exports = {
     });
   },
 
-  remove: (l) => {
+  remove: (vin) => {
     pusher.trigger("vay-locations", "REMOVE", {
-      location: l,
+      vin,
     });
   }
 }

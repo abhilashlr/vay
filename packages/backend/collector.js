@@ -1,17 +1,17 @@
-const { add, update } = require('./broadcaster');
+const { add, update, remove } = require('./broadcaster');
 const express = require('express')
 const app = express()
 const port = 8000
 
 app.use(express.json())
 
-app.post('/api/add', (req, res) => {
+app.post('/api/vehicles', (req, res) => {
   add(req.body);
 
   res.send({ success: true })
 });
 
-app.post('/api/update/:vin', (req, res) => {
+app.put('/api/vehicles/:vin', (req, res) => {
   update({
     ...req.body,
     vin: req.params.vin,
@@ -21,6 +21,12 @@ app.post('/api/update/:vin', (req, res) => {
     ...req.body,
     vin: req.params.vin,
   })
+
+  res.send({ success: true });
+});
+
+app.delete('/api/vehicles/:vin', (req, res) => {
+  remove(req.params.vin)
 
   res.send({ success: true });
 });

@@ -19,3 +19,7 @@ body {
 h1 {
   margin: 0;
 }
+
+.text-muted {
+  color: grey;
+}
