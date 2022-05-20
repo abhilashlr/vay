@@ -8,4 +8,4 @@ export const App: FC = () => {
       <MapPage />
     </PusherProvider>
   );
-}
+};

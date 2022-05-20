@@ -1,9 +1,10 @@
-import { QueryClient, QueryClientProvider } from "react-query";
-import { SimulatorPage } from "./components";
+import { FC } from 'react';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { SimulatorPage } from './components';
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient();
 
-export const App = () => {
+export const App: FC = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <h1>Vay Simulator</h1>
@@ -11,4 +12,4 @@ export const App = () => {
       <SimulatorPage />
     </QueryClientProvider>
   );
-}
+};

@@ -1,1 +1,1 @@
-export * from './pages/simulator'
+export * from './pages/simulator';

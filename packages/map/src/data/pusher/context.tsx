@@ -1,11 +1,13 @@
-import {  createContext,  ReactElement,  useContext, ReactNode } from "react";
 import Pusher from 'pusher-js';
+import { createContext, ReactElement, useContext, ReactNode } from 'react';
 
 type PusherContextProps = {
   pusher: Pusher;
 };
 
-const PusherContext = createContext<PusherContextProps>({} as PusherContextProps);
+const PusherContext = createContext<PusherContextProps>(
+  {} as PusherContextProps,
+);
 
 export const PusherProvider = ({
   children,
@@ -13,7 +15,7 @@ export const PusherProvider = ({
   children: ReactNode;
 }): ReactElement => {
   const pusher = new Pusher('b21791b6356e9b0999ab', {
-    cluster: 'mt1'
+    cluster: 'mt1',
   });
 
   return (
@@ -27,9 +29,7 @@ export const usePusher = (): PusherContextProps => {
   const context = useContext(PusherContext);
 
   if (context === undefined) {
-    throw new Error(
-      'usePusher must be used within PusherProvider',
-    );
+    throw new Error('usePusher must be used within PusherProvider');
   }
 
   return context;

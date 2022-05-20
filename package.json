@@ -10,7 +10,8 @@
     "server": "yarn workspace backend start",
     "map": "yarn workspace map start",
     "simulator": "yarn workspace simulator start",
-    "start": "concurrently --kill-others-on-fail \"yarn server\"  \"yarn simulator\" \"yarn map\""
+    "start": "concurrently --kill-others-on-fail \"yarn server\"  \"yarn simulator\" \"yarn map\"",
+    "lint": "concurrently --kill-others-on-fail \"yarn workspace backend lint\"  \"yarn workspace simulator lint\" \"yarn workspace map lint\""
   },
   "author": "Abhilash L R",
   "license": "ISC",
