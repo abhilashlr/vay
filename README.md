@@ -3,6 +3,8 @@
 To get all the parts of the app up and running, you can simply run (from the root of this application path):
 
 ```shell
+yarn install
+# and then
 yarn start
 ```
 
